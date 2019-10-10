@@ -13,7 +13,7 @@ class ReplSuite(project: String) extends ToolSuite(project) with DisableScalaCol
     s.usejavacp.value = false
     s.classpath.value = sys.props("sbt.paths." + project + ".test.classes")
     s.plugin.value = List(sys.props("sbt.paths.plugin.jar"))
-    val lines = ILoop.runForTranscript(code, s).lines.toList
+    val lines = Predef.augmentString(ILoop.runForTranscript(code, s)).lines.toList
     lines
       .drop(3)
       .dropRight(2)

@@ -16,7 +16,7 @@ object LotsOfProjects extends ConverterSuite {
         case e: TestFailedException if e.getMessage().startsWith("scalac parse err") =>
           "parse error"
         case e =>
-          e.getMessage.lines.take(1).toSeq.mkString
+          Predef.augmentString(e.getMessage).lines.take(1).toSeq.mkString
       }
     s"${e.getClass.getSimpleName}: $details"
   }

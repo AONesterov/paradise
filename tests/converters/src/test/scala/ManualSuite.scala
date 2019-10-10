@@ -9,7 +9,7 @@ class ManualSuite extends ConverterSuite {
     check(code)
   }
   def check(code: String): Unit = {
-    test(code.lines.filter(_.nonEmpty).take(1).mkString) {
+    test(Predef.augmentString(code).lines.filter(_.nonEmpty).take(1).mkString) {
       getConvertedMetaTree(code)
     }
   }
