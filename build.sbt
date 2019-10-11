@@ -6,7 +6,7 @@ import scala.xml.transform.{RewriteRule, RuleTransformer}
 import org.scalameta.os
 
 lazy val Scala211 = "2.11.12"
-lazy val Scala212 = "2.12.9"
+lazy val Scala212 = "2.12.10"
 lazy val LanguageVersions = Seq(Scala211, Scala212)
 lazy val MetaVersion = "1.8.0"
 lazy val LanguageVersion = LanguageVersions.last
